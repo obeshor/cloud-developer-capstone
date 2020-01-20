@@ -31,8 +31,8 @@ custom:
     api:
       info:
         version: v1.0.0
-        title: Monogram API
-        description: Serverless application for images sharing
+        title: Journal API
+        description: Serverless journal application where a user can pen down their thoughts, feelings and inspired images
     models:
       - name: ItemRequest
         contentType: "application/json"
