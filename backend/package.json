@@ -1,7 +1,7 @@
 {
-  "name": "serverless-jhp-monogram",
+  "name": "serverless-journal-app",
   "version": "1.0.0",
-  "description": "Serverless monogram app",
+  "description": "Serverless journal application where in users can pen down their thoughts and feelings.",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/http-errors": "^1.6.1",
