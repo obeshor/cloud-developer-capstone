@@ -15,8 +15,8 @@ export class ItemAccess {
 
   constructor(
     private readonly docClient: DocumentClient = createDynamoDBClient(),
-    private readonly ItemsTable = process.env.MONOGRAM_ITEMS_TABLE,
-    private readonly ItemsImageBucket = process.env.MONOGRAM_ITEMS_IMAGES_S3_BUCKET) {
+    private readonly ItemsTable = process.env.JOURNAL_ITEMS_TABLE,
+    private readonly ItemsImageBucket = process.env.JOURNAL_ITEMS_IMAGES_S3_BUCKET) {
     }
     
 

@@ -23,7 +23,7 @@ const docClient = new AWS.DynamoDB.DocumentClient()
 
 const logger = createLogger('updateItem')
 
-const itemTable = process.env.MONOGRAM_ITEMS_TABLE
+const itemTable = process.env.JOURNAL_ITEMS_TABLE
 
 //request get Items
 app.put('/items/:itemId', async(_req, res) => {

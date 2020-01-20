@@ -22,7 +22,7 @@ const docClient = new AWS.DynamoDB.DocumentClient()
 
 const logger = createLogger('generateUploadUrl')
 
-const ItemsTable = process.env.MONOGRAM_ITEMS_TABLE
+const ItemsTable = process.env.JOURNAL_ITEMS_TABLE
 
 //request get Items
 app.post('/items/:itemId/attachment', async(_req, res) => {
