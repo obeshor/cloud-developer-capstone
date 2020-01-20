@@ -72,6 +72,11 @@ functions:
           cors: true
           authorizer: Auth
           reqValidatorName: 'RequestValidator'
+          documentation:
+            summary: Create a new item
+            description: Create a new item
+            requestModels:
+              "application/json": CreateRequest
 
     iamRoleStatements:
       - Effect: Allow
@@ -93,6 +98,11 @@ functions:
           path: items/{itemId}
           cors: true
           authorizer: Auth
+          documentation:
+            summary: Update item
+            description: Update an item
+            requestModels:
+              "application/json": UpdateRequest
 
     iamRoleStatements:
       - Effect: Allow
@@ -139,11 +149,18 @@ functions:
           - s3:PutObject
         Resource: arn:aws:s3:::${self:provider.environment.JOURNAL_ITEMS_IMAGES_S3_BUCKET}/*
 
-    
-
 
 resources:
   Resources:
+
+    RequestValidator:
+      Type: "AWS::ApiGateway::RequestValidator"
+      Properties:
+        Name: 'request-body-validator'
+        RestApiId: 
+          Ref: ApiGatewayRestApi
+        ValidateRequestBody: true
+        ValidateRequestParameters: false   
 
     GatewayResponseDefault4XX:
       Type: AWS::ApiGateway::GatewayResponse
@@ -215,12 +232,3 @@ resources:
               Action: 's3:GetObject'
               Resource: 'arn:aws:s3:::${self:provider.environment.JOURNAL_ITEMS_IMAGES_S3_BUCKET}/*'
         Bucket: !Ref AttachmentsBucket
-
-    RequestValidator:
-      Type: "AWS::ApiGateway::RequestValidator"
-      Properties:
-        Name: 'request-body-validator'
-        RestApiId: 
-          Ref: ApiGatewayRestApi
-        ValidateRequestBody: true
-        ValidateRequestParameters: false  
