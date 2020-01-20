@@ -34,9 +34,13 @@ custom:
         title: Journal API
         description: Serverless journal application where a user can pen down their thoughts, feelings and inspired images
     models:
-      - name: ItemRequest
+      - name: CreateRequest
         contentType: "application/json"
         schema: ${file(models/create-item-request.json)}
+
+      - name: UpdateRequest
+        contentType: application/json
+        schema: ${file(models/update-item-request.json)}
 
 functions:
 
