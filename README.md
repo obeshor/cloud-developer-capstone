@@ -1,6 +1,6 @@
 # Serverless Journal App
 
-Serverless journal application where a user can pen down their thoughts, feelings and inspired images.
+Serverless journal application where a user can pen down their thoughts and feelings
 
 ## Functionality 
 
